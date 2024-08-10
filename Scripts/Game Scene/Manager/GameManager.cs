@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
 
                 fadeOutManager.enabled = true;
                 audioManager.enabled = true;
-                displayResult.Invoke(nameof(displayResult.EvaluateResultText), 3f);
+                displayResult.Invoke(nameof(displayResult.EvaluateResultText), 5f);
                 isCalledAllManager = true;
             }
         }

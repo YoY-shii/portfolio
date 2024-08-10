@@ -55,7 +55,7 @@ public class DisplayResult : MonoBehaviour
             $"\n{score}{calcScore.ResultScore()}" +
             $"\n{title}{name}";
 
-        Invoke(nameof(ReturnStartScene), 3f);
+        Invoke(nameof(ReturnStartScene), 5f);
     }
 
     void ReturnStartScene() => SceneManager.LoadScene("Start Scene");
