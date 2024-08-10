@@ -10,7 +10,7 @@ public class FadeOutManager : MonoBehaviour
 
     //Cache
     WaitForSeconds waitForSecondsCache;
-    readonly float delayTime = 0.002f;
+    readonly float delayTime = 0.02f;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class FadeOutManager : MonoBehaviour
     /// </summary>
     IEnumerator FadeOut()
     {
-        for (var i = 0f; i <= 255f; i += 0.001f)
+        for (var i = 0f; i <= 255f; i += 0.01f)
         {
             fadeOutBackGround.color = new Color(0f, 0f, 0f, i);
             yield return waitForSecondsCache;

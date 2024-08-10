@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 
     //Cache
     WaitForSeconds waitForSecondsCache;
-    readonly float delayTime = 0.002f;
+    readonly float delayTime = 0.02f;
 
     private void Awake()
     {
