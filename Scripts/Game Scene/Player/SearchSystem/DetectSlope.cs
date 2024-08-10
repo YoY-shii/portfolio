@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class DetectSlope : MonoBehaviour
 {
+    //Field
     readonly float interval = 5f;
+
+    //Cache
     Transform transformCache;
 
     //Property

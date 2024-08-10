@@ -98,7 +98,7 @@ public class Player : MonoBehaviour, IInjurer, IStatus
     {
         while (IsAlive)
         {
-            if (gameManager.IsEnding) yield return WaitForSecondsCache;
+            if (gameManager.IsEnding) break;
             if (animator.GetCurrentAnimatorStateInfo(0).tagHash == damagedTagCache) yield return WaitForSecondsCache;
 
             if (Input.GetMouseButtonDown(0))
@@ -201,6 +201,7 @@ public class Player : MonoBehaviour, IInjurer, IStatus
         time = 0;
         StartCoroutine(Attack());
         StopCoroutine(Revival());
+
         yield return null;
     }
 }

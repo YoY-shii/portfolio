@@ -42,9 +42,9 @@ public class GameManager : MonoBehaviour
 
         IsEndingText.enabled = false;
 
-        var gameTime = 1f;
+        var gameTime = 3f;
         const float MINUTES = 1f;
-        const float SECONDS = 6f;
+        const float SECONDS = 60f;
         timeLimit = gameTime * MINUTES * SECONDS; //180秒
 
         IsEnding = false;
