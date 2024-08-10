@@ -11,7 +11,7 @@ public class EffectPool : MonoBehaviour
 
     //Field
     [SerializeField] FireMagic effectPrefab;
-    [SerializeField] List<GameObject> pool = new List<GameObject>(32);
+    [SerializeField] List<GameObject> pool = new List<GameObject>(16);
 
     private void Awake()
     {
