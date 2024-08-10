@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
     {
         while (audioSource.volume > 0)
         {
-            audioSource.volume -= 0.001f;
+            audioSource.volume -= 0.01f;
             yield return waitForSecondsCache;
         }
     }

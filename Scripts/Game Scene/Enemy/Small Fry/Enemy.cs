@@ -132,6 +132,7 @@ public class Enemy : MonoBehaviour, IDamageable, IStatus, IHaveScore
 
     private void OnDisable()
     {
+        Hp = maxHp;
         calcScore.GetScore(this,this);
     }
 }

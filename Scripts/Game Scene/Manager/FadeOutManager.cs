@@ -29,7 +29,7 @@ public class FadeOutManager : MonoBehaviour
     /// </summary>
     IEnumerator FadeOut()
     {
-        for (var i = 0f; i <= 255f; i += 0.01f)
+        for (var i = 0f; i <= 255f; i += 0.1f)
         {
             fadeOutBackGround.color = new Color(0f, 0f, 0f, i);
             yield return waitForSecondsCache;
