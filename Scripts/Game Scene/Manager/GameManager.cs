@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] FadeOutManager fadeOutManager;
     [SerializeField] AudioManager audioManager;
     [SerializeField] DisplayResult displayResult;
+    [SerializeField] FinishInput finishInput;
 
     //Field
     [SerializeField] Canvas canvas;
@@ -40,6 +41,11 @@ public class GameManager : MonoBehaviour
             displayResult = FindAnyObjectByType<DisplayResult>();
         }
 
+        if (ReferenceEquals(finishInput, null))
+        {
+            finishInput = FindAnyObjectByType<FinishInput>();
+        }
+
         IsEndingText.enabled = false;
 
         var gameTime = 3f;
@@ -63,7 +69,7 @@ public class GameManager : MonoBehaviour
         var span = new TimeSpan(0, 0, (int)timeLimit);
         timeLimitText.text = span.ToString(@"mm\:ss");
 
-        if (timeLimit <= 0)
+        if (timeLimit <= 0 || finishInput.ForcedTermination())
         {
             timeLimit = 0;
             IsEndingText.enabled = true;
