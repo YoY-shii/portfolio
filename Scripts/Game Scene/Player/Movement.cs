@@ -87,7 +87,7 @@ public class Movement : MonoBehaviour
         animator.SetFloat(moveSpeedCache, moveDirection.sqrMagnitude);
 
         //十字キー方向にキャラが向くコード
-        var rotationSpeed = 600 * Time.deltaTime;
+        var rotationSpeed = 100 * Time.deltaTime;
         var direction = transformCache.localPosition + moveDirection * rotationSpeed;
         transformCache.LookAt(direction);
 
