@@ -63,7 +63,7 @@ public class Boss : MonoBehaviour, IDamageable, IStatus, IHaveScore
             IsAlive = false;
             nav.isStopped = true;
             animator.SetTrigger(isDeathCache);
-            Invoke(nameof(Death), 1f);
+            Destroy(this.gameObject, 1.0f);
         }
     }
 
@@ -76,8 +76,6 @@ public class Boss : MonoBehaviour, IDamageable, IStatus, IHaveScore
             iInjurer.Damage(damage);
         }
     }
-
-    void Death() => Destroy(this.gameObject);
 
     private void OnDestroy()
     {
