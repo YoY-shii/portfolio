@@ -82,6 +82,5 @@ public class Boss : MonoBehaviour, IDamageable, IStatus, IHaveScore
     private void OnDestroy()
     {
         calcScore.GetScore(this,this);
-        calcScore.CheckAlive(this);
     }
 }

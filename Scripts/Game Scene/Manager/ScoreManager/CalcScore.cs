@@ -12,29 +12,20 @@ public class CalcScore : MonoBehaviour
     int totalScore = 0;
     public int KilledCount { get; set; }
     public int DeathCount { get; set; }
-    public bool isAliveBoss { get; set; }
 
     void Start()
     {
         KilledCount = 0;
         DeathCount = 0;
-        isAliveBoss = true;
 
         totalScoreText.text = "Score " + totalScore.ToString();
     }
 
     public void CheckAlive(IStatus status)
     {
-        //下記の二つのifはリスコフの置換原則に違反
-        if (status is Player && !status.IsAlive)
+        if (!status.IsAlive)
         {
             DeathCount++;
-            return;
-        }
-
-        if (status is Boss && !status.IsAlive)
-        {
-            isAliveBoss = status.IsAlive;
         }
     }
 
