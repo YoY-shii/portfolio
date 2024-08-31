@@ -98,8 +98,6 @@ public class Enemy : MonoBehaviour, IDamageable, IStatus, IHaveScore
                 yield return waitForSecondsCache;
 
                 nav.isStopped = false;
-                
-                yield return null;
             }
         }
     }

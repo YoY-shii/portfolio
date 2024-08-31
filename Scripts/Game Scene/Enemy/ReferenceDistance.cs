@@ -5,7 +5,7 @@ using UnityEngine;
 //Player.Instance ←検索用
 public class ReferenceDistance : MonoBehaviour
 {
-    [SerializeField] Transform transformCache;
+    Transform transformCache;
 
     void Awake()
     {

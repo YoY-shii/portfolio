@@ -62,14 +62,3 @@ public class CalcScore : MonoBehaviour
         return finallScore;
     }
 }
-
-//まとめる前のCheckAliveメソッド
-//public void CheckAlivePlayer(Player player)
-//{
-//    if (!player.IsAlive)
-//    {
-//        DeathCount++;
-//    }
-//}
-
-//public void CheckAliveBoss(Boss boss) => isAliveBoss = boss.IsAlive;

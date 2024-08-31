@@ -4,41 +4,26 @@ using UnityEngine;
 
 public class DetectSlope : MonoBehaviour
 {
-    //Field
-    readonly float interval = 5f;
-
     //Cache
     Transform transformCache;
-
-    //Property
-    /// <value>Movementクラスへ</value>
-    public bool IsSlope { get; private set; }
 
     void Start()
     {
         transformCache = this.transform;
     }
 
-    void Update()
-    {
-        if (Time.frameCount % interval == 0f)
-        {
-            Detect();
-        }
-    }
-
     /// <summary>
     ///坂検知
     /// </summary>
-    void Detect()
+    public bool Detect()
     {
         var ray = new Ray(transformCache.localPosition, transformCache.forward);
         var maxDistance = 1f; //pos使用するなら3f
 
         if (!Physics.Raycast(ray, maxDistance))
         {
-            IsSlope = false;
-            return;
+            return false;
+            
         }
 
         // 坂道の検出範囲
@@ -52,8 +37,10 @@ public class DetectSlope : MonoBehaviour
             // 坂道の角度を計算
             var slopeAngle = Vector3.Angle(Vector3.up, slopeNormal);
 
-            IsSlope = 35f <= slopeAngle ? true : false;
+            return 35f <= slopeAngle ? true : false;
         }
+
+        return true;
     }
 }
 

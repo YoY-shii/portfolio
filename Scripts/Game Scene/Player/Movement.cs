@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
 
         if (Time.frameCount % interval == 0f)
         {
-            currentSpeed = detectSlope.IsSlope ? slopeSpeed : groundSpeed;
+            currentSpeed = detectSlope.Detect() ? slopeSpeed : groundSpeed;
         }
 
         InputDirection();

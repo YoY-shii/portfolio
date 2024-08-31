@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BossBehaviour : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class BossBehaviour : MonoBehaviour
 
     //Cache
     Animator animator;
-    UnityEngine.AI.NavMeshAgent nav;
+    NavMeshAgent nav;
     Transform transformCache;
     WaitForSeconds waitForSecondsCache;
     WaitForSeconds waitForSecondsCacheAttack;

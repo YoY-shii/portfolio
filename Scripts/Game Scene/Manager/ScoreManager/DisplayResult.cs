@@ -30,7 +30,9 @@ public class DisplayResult : MonoBehaviour
         var title = "称号:";
         var name = "";
 
-        if (Player.Instance.Hp == 100 && calcScore.DeathCount == 0 && !boss.IsAlive)
+        if (Player.Instance.Hp == 100 &&
+            calcScore.DeathCount == 0 &&
+            !boss.IsAlive)
         {
             name = "暇神";
         }
