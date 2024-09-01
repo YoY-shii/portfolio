@@ -87,7 +87,6 @@ public class Player : MonoBehaviour, IInjurer, IStatus
 
     void Update()
     {
-        if (!IsAlive) return;
         if (isInvincibility) MakeisInvincibility();
     }
 
@@ -176,6 +175,7 @@ public class Player : MonoBehaviour, IInjurer, IStatus
     {
         //後方にノックバック
         var knockBackPower = 500f;
+        if (0 < direction.y) direction.y = 0f;
         rb.AddForce(direction * knockBackPower * Time.deltaTime, ForceMode.VelocityChange);
 
         time += Time.deltaTime;
