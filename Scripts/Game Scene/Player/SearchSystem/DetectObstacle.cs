@@ -25,6 +25,7 @@ public class DetectObstacle : MonoBehaviour
     /// </summary>
     public void JudgeObstacle(Search Search)
     {
+        if (ReferenceEquals(Search.SearchObj, null)) return;
         //方向を取得
         var direction = Search.SearchObj.transform.localPosition - transformCache.localPosition;
         direction.Normalize();

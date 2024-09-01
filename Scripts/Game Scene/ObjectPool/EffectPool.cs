@@ -11,7 +11,7 @@ public class EffectPool : MonoBehaviour
 
     //Field
     [SerializeField] FireMagic effectPrefab;
-    [SerializeField] List<GameObject> pool = new List<GameObject>(16);
+    [SerializeField] List<GameObject> pool;
 
     private void Awake()
     {
@@ -24,6 +24,7 @@ public class EffectPool : MonoBehaviour
     void Start()
     {
         var defaultMax = 16;
+        pool = new List<GameObject>(defaultMax);
 
         //poolにキャッシュ
         for (int i = 0; i < defaultMax; i++)

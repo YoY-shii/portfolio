@@ -15,7 +15,6 @@ public class Boss : MonoBehaviour, IDamageable, IStatus, IHaveScore
     Animator animator;
     Transform transformCamCache;
     Transform transformCache;
-    NavMeshAgent nav;
     int isDeathCache;
 
     //Property
@@ -33,7 +32,6 @@ public class Boss : MonoBehaviour, IDamageable, IStatus, IHaveScore
         }
 
         TryGetComponent(out animator);
-        TryGetComponent(out nav);
     }
 
     void Start()
@@ -44,7 +42,6 @@ public class Boss : MonoBehaviour, IDamageable, IStatus, IHaveScore
         Hp = maxHp;
         IsAlive = true;
         Score = 5000;
-        nav.isStopped = false;
     }
 
     private void LateUpdate()
@@ -61,7 +58,6 @@ public class Boss : MonoBehaviour, IDamageable, IStatus, IHaveScore
         {
             Hp = 0;
             IsAlive = false;
-            nav.isStopped = true;
             animator.SetTrigger(isDeathCache);
             Destroy(this.gameObject, 1.0f);
         }
