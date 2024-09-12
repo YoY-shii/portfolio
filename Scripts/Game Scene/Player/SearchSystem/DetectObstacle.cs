@@ -11,7 +11,7 @@ public class DetectObstacle : MonoBehaviour
     int LayerBackGround;
 
     /// <value>LockOnCameraクラスへ</value>
-    public bool IsObstacle { get; private set; }
+    [field:SerializeField] public bool IsObstacle { get; private set; }
 
     void Start()
     {
@@ -48,8 +48,6 @@ public class DetectObstacle : MonoBehaviour
             else if (hit.collider.gameObject.layer == LayerBackGround)
             {
                 IsObstacle = true;
-                //Debug.DrawRay(pos, ray.direction * 5f, Color.red, maxDistance);
-                //Debug.Log(hit.collider.name);
             }
         }
     }

@@ -20,6 +20,9 @@ public class LockOnCamera : MonoBehaviour
     Vector3 rangeDistance = new (5, 5, 5);
     Vector3 closeRangeDistance = new (4, 4, 4);
 
+    //Cache
+    Transform transformCache;
+
     private void Awake()
     {
         if (ReferenceEquals(search, null))
@@ -31,6 +34,8 @@ public class LockOnCamera : MonoBehaviour
         {
             detectObstacle = FindAnyObjectByType<DetectObstacle>();
         }
+
+        transformCache = Player.Instance.transform;
     }
 
     void Start()
@@ -45,7 +50,7 @@ public class LockOnCamera : MonoBehaviour
 
         if (lockOnTarget == null) return;
 
-        var distance = Vector3.SqrMagnitude(Player.Instance.transform.position - lockOnTarget.transform.position);
+        var distance = Vector3.SqrMagnitude(transformCache.position - lockOnTarget.transform.position);
 
         if (!lockOnTarget.activeSelf ||
             rangeDistance.sqrMagnitude < distance ||
@@ -64,7 +69,7 @@ public class LockOnCamera : MonoBehaviour
 
         if (closeRangeDistance.sqrMagnitude < distance)
         {
-            lockOnCVCam.LookAt = Player.Instance.transform;
+            lockOnCVCam.LookAt = transformCache;
         }
     }
 }
