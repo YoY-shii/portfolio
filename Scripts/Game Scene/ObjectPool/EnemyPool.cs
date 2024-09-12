@@ -38,7 +38,6 @@ public class EnemyPool : MonoBehaviour
             if (targets[i] != null) continue;
 
             targets[i] = pool.Get();
-            targets[i].name = $"enemy{i}";
         }
     }
 

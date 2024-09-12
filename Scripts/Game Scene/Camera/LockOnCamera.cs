@@ -34,14 +34,14 @@ public class LockOnCamera : MonoBehaviour
         {
             detectObstacle = FindAnyObjectByType<DetectObstacle>();
         }
-
-        transformCache = Player.Instance.transform;
     }
 
     void Start()
     {
         freeCVCam.enabled = true;
         lockOnCVCam.enabled = false;
+
+        transformCache = Player.Instance.transform;
     }
 
     void Update()
