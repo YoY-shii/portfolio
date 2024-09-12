@@ -81,7 +81,7 @@ public class BombOrientation : MonoBehaviour
         }
 
         //距離が射程距離外なら早期return
-        var magnitude = Vector3.SqrMagnitude(transformCache.localPosition - search.SearchObj.transform.localPosition);
+        var magnitude = Vector3.SqrMagnitude(transformCache.position - search.SearchObj.transform.position);
         return magnitude < rangeDistance.sqrMagnitude;
     }
 
