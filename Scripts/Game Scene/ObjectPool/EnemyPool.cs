@@ -36,7 +36,6 @@ public class EnemyPool : MonoBehaviour
         for (int i = 0; i < targets.Length; i++)
         {
             if (targets[i] != null) continue;
-
             targets[i] = pool.Get();
         }
     }
