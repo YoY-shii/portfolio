@@ -72,8 +72,7 @@ public class Search : MonoBehaviour
                 }
             }
 
-
-            right -= 1;
+            left += 1;
 
             for (int i = right; left < i; i--)
             {
@@ -87,9 +86,11 @@ public class Search : MonoBehaviour
                 }
             }
 
-            left += 1;
+            right -= 1;
         }
 
         SearchObj = targets[0];
     }
+
+
 }
