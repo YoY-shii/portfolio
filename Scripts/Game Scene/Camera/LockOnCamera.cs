@@ -16,7 +16,7 @@ public class LockOnCamera : MonoBehaviour
     //Field
     [SerializeField] CinemachineVirtualCamera freeCVCam;
     [SerializeField] CinemachineVirtualCamera lockOnCVCam;
-    GameObject lockOnTarget;
+    [SerializeField] GameObject lockOnTarget;
     Vector3 rangeDistance = new (5, 5, 5);
     Vector3 closeRangeDistance = new (4, 4, 4);
 
@@ -60,7 +60,7 @@ public class LockOnCamera : MonoBehaviour
             lockOnCVCam.enabled = false;
         }
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetMouseButton(1))
         {
             freeCVCam.enabled = false;
             lockOnCVCam.enabled = true;
